@@ -8,6 +8,7 @@ class Ball(Turtle):
         self.color('white')
         self.shape('circle')
         self.speed('fastest')
+        self.ball_speed = 0.1
         self.x_move = 10
         self.y_move = 10
         self.move_ball()
@@ -22,7 +23,11 @@ class Ball(Turtle):
 
     def ball_returned(self):
         self.x_move *= -1
+        self.ball_speed *= 0.9
 
     def refresh(self):
+        self.x_move *= -1
+        self.y_move *= -1
         self.goto(0,0)
+        self.ball_speed = 0.1
         self.move_ball()

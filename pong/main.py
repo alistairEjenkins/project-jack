@@ -25,7 +25,7 @@ def main():
 
     playing = True
     while playing:
-        sleep(0.1)
+        sleep(ball.ball_speed)
         ball.move_ball()
         screen.update()
 
@@ -34,8 +34,8 @@ def main():
             ball.bounce()
 
         # collision with paddle
-        if (paddle_1.distance(ball) <= 50 and ball.xcor() < - 340) or \
-                (paddle_2.distance(ball) <= 50 and ball.xcor() > 340):
+        if (paddle_1.distance(ball) <= 50 and ball.xcor() < - 320) or \
+                (paddle_2.distance(ball) <= 50 and ball.xcor() > 320):
             ball.ball_returned()
 
 
